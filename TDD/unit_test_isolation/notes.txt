@@ -1,0 +1,28 @@
+Unit Test Isolation with:
+    - Test Doubles: objects used in unit tests as replacements to the real production system collaborators
+        - (all code depends on other parts of the system)
+        - (those other parts of the system are not always easy to replicate in the unit test environment, or
+        would make tests slow if used directly)
+
+    Types of Test Doubles
+        - Dummies
+            - obj's/placeholders passed around, but should not be called/used
+            - objects that can be passed around as necessary
+            - do not have any type of test implementation and should not be called/used
+            - often generate exceptions if called
+        - Fakes
+            - these obj's generally have a simplified functional implementation of a particular interface that
+                is adequate for testing, but not production
+            - usable in test code, but not for production
+        - Stubs
+            - these obj's do expect to be called (provide implementations) but respond with canned answers
+                that are suitable for the test
+        - Spies
+            - these obj's provide implementation that record the values passed in so they can be used by test
+            - used for test validation
+        - Mocks
+            - these obj's are pre-programmed to expect specific calls and param's and can throw exceptions when
+                necessary
+            - have pre-programmed exceptions about the ordering of calls, # of times fn's will be called, and
+                values that will be passed in
+            - generate their own exceptions when these pre-programmed expectations are not met

@@ -1,0 +1,15 @@
+unit testing
+    - testing at function level
+
+
+component testing
+    - tests external interfaces for individual components (collection of functions)
+    - testing is at the library and compiled binary level
+
+
+system testing
+    - tests the external interfaces of a system which is a collection of components or sub-systems
+
+
+performance testing
+    - testing done at sub-system and system levels to verify timing and resource usages are acceptable

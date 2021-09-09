@@ -1,0 +1,106 @@
+unittest.mock
+    python mocking framework
+    included in 3.3+
+    otherwise, pip install mock
+
+- unittest.mock provides the Mock class which can be used as a fake, stub, spy, or true mock for all tests
+- the Mock class has many initialization param's for controlling its behavior
+    - specify how obj should behave, what interface to mock, call another fn when called, what value to return
+- once it has been called, a Mock obj has many built in functions for verifying how it was used
+    - how many times called, with what param's
+
+
+Mock Initialization
+- Mock provides many initialization param's to control the mock obj's behavior
+    - spec:
+        - specifies the interface that Mock obj is implementing
+            - if any attributes of the Mock obj are called, which are not in that interface, then the Mock will
+                automatically generate an attribute exception
+    - side_effect:
+        - specifies a fn that should be called when the mock is called
+        - can be used for more complicated test logic that returns different values, depending on input param's,
+            or generates exceptions
+        - if the side_effect param is set, its return value is used instead
+    - return_value:
+        - specifies the return value when the mock is called
+        - if the side_effect param is set, its return value is used instead
+
+
+
+Mock Verification
+- mock provides many built in fn's for verifying how it was used, such as the following asserts:
+    - assert_called
+        - assert the mock was called
+        - will pass if the mock was ever called with any param's
+    - assert_called_once
+        - assert the mock was called once
+        - will pass if the mock was called exactly once time
+    - assert_called_with
+        - assert the last call to the mock was with the specified params
+        - will pass if the mock was last called with the specified params
+    - assert_called_once_with
+        - assert the mock was called once with the specified params
+        - will pass if the mock was called exactly once, with the specified params
+    - assert_any_call
+        - assert the mock was ever called with the specified params
+        - will pass if the mock was ever called with the specified params
+    - assert_not_called
+        - assert the mock was not called
+        - will pass if the mock was never called
+    - assert_has_calls
+        - assert the mock was called with the list of calls
+        - will pass if the mock was called with the params specified in each of the passed in lists of mock
+            call objs, and optionally in the order that those call objs are put into the list
+    - called
+        - boolean value indicating if the mock was ever called
+    - call_count
+        - int value representing the # of times the mock obj was called
+    - call_args
+        - contains args/params the mock was last called with
+    - call_args_list
+        - a list containing the args that were used for each call to the mock
+        - list with each entry containing the params that were used in a call to the mock obj
+
+
+unittest.mock also has the MagicMock class
+    - python magic methods
+    - derived from Mock and provides a default implementation of many of the magic methods defined for objs
+        in python (__str__)
+        - following are not implemented in MagicMock:
+            __getattr__ __setattr__ __init__ __new__ __prepare__ __instancecheck__ __subclasscheck__ __del__
+
+
+pytest monkeypatch test fixture
+pytest provides the monkeypatch test fixture to allow a test to dynamically replace:
+    - module and class attributes
+    - dictionary entries
+    - environment variables
+
+
+
+*** EXAMPLES ***
+MOCK Initialization
+==============================
+def test_foo():
+    bar = Mock(spec=SpecClass)
+    bar2 = Mock(side_effect=barFunc)
+    bar3 = Mock(return_value=1)
+
+
+MONKEYPATCH
+==============================
+def callIt():
+    print('Hello world')
+
+def test_patch(monkeypatch):
+    monkeypatch(callIt, Mock())
+    callIt()
+    callIt.assert_called_once()
+
+
+==============================
+# Example
+def test_foo():
+    bar = Mock()
+    functionThatUsesBar(bar)
+    bar.assert_called_once()
