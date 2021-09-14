@@ -1,0 +1,1 @@
+analyze cipher based on the used % of each english alphabet letter, then use that letter and take steps away from

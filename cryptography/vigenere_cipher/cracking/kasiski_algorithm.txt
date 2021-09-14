@@ -1,0 +1,27 @@
+cracking vigenere cipher is much harder
+    caeser cipher keyspace = 26
+    vigenere cipher keyspace = 26^size/length of key
+
+
+
+can use the Kasiski algorithm
+    - if we know the size of the key, then we can use frequency analysis to decrypt the cipher-text
+    - take advantage of information leaking
+
+
+algorithm:
+
+
+1. we have to find size of key
+    - can analyze repeated substrings and their factors to get a good guess
+    - find repeated substrings in cipher-text
+2. we can construct substrings from the cipher-text that are encrypted by the same letters
+    - substrings that are 3 of same letters in a row appearing multiple times
+        - find substrings of 3+ letters that occur more than once
+        - then find distance from first letter in 1st occurance to first letter in next occurance
+3. we can use frequency analysis to find the letters of the key
+    - if we know the size of key, we can use frequency analysis, b/c vigenere cipher is same as caeser cipher
+        - except for multiple keys
+    - if the length of the key is N, then we know that every N-th letter must have been encrypted using same subkey
+    - so we create substrings containing ever N-th letter
+        - there will be N substrings after this operation

@@ -1,0 +1,18 @@
+similar to caesar, but use several keys instead of just 1
+
+- method of encrypting alphabetic text by using a series of interwoven caesar ciphers based on the letters of a keyword
+- polyalphabetic substitution
+- easy to understand & implement
+
+
+the numerical representations of the letters in the key define how many characters to shift the actual letter
+in the plain text
+S shifts 18
+E shifts 3
+C shifts 2
+R shifts 17
+E shifts 4
+T shifts 19
+
+instead of using a single value as the key, we have as many values as the numbers of letters in the private key
+size of keyspace = 26^size of the key

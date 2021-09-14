@@ -1,0 +1,8 @@
+symmetric
+    - private key encryption
+        - single key; same key is used to encrypt and decrypt
+
+asymmetric
+    - public key cryptography/encryption
+        - public and private key
+        - sender encypts message with receivers public key, and receiver uses private key to decrypt

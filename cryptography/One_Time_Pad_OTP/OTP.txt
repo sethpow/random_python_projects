@@ -1,0 +1,12 @@
+OTP (aka Vernam cipher)
+use as many letters in the key as the length of the plain text
+    - with this, frequency analysis can still be used on cipher text, b/c english letters have well known distribution
+
+SOLUTION: OTP can solve that as well
+    - use totally RANDOM numbers to shift the letters in the plain text
+    
+        - *** key must have the same size as the plain text ***
+            - *** key must contain RANDOM numbers ***
+
+    - RANDOM numbers eliminate information leaking
+
