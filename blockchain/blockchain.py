@@ -97,6 +97,7 @@ def verify_chain():
         if index == 0:
             continue
         # compare value stored for this key with last block
+        # check if all but last block is equal to entire previous block
         if block['previous_hash'] != hash_block(blockchain[index - 1]):
             return False
     

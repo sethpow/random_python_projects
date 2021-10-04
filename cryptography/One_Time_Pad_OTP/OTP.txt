@@ -10,3 +10,4 @@ SOLUTION: OTP can solve that as well
 
     - RANDOM numbers eliminate information leaking
 
+HOWEVER, OTP STILL USES PSEUDO-RANDOMNESS (see RANDOMNESS pictures)

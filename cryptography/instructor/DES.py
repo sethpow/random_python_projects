@@ -72,6 +72,7 @@ if __name__ == '__main__':
     plain_text = 'This is the secret message we want to encrypt!'
     plain_text = add_padding(plain_text)
     cipher_text = encrypt(plain_text, key)
+    print(cipher_text)
 
     decrypted_message = decrypt(cipher_text, key)
     decrypted_message = remove_padding(decrypted_message)

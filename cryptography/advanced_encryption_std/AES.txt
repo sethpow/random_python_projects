@@ -1,0 +1,10 @@
+What is the size of a block in the AES cryptosystem?
+    - 128 bits
+
+How many subkeys does AES use?
+    10
+
+The S-Box of the AES cryptosystem is 16x16 matrix with pre-defined values. Why to use these
+pre-defined values?
+    - those values help to make sure that AES is resistant to linear and differential cryptoanalysis
+

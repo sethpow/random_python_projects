@@ -1,0 +1,8 @@
+linear congruential generator is better than middle square method
+    - MSM uses pseudo random
+        - seed (initial value) can repeat after period (sequence before repeating)
+            - period: length of steps when the program starts to repeat itself
+
+
+linear congruential generator
+    - 

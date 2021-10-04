@@ -1,0 +1,38 @@
+data encryption standard
+    it is a form of feistal cipher (see feistal cipher  folder)
+
+symmetric key algorithm
+    public and private keys
+
+block cipher
+    (plaintext is processed to the cipher text in number of blocks)
+
+hybrid of substitution cipher and permutation cipher
+    (not able to use frequency analysis to crack DES)
+    
+
+Q&A
+We split the plain text into 64 bits long blocks
+there are 16 rounds in the DES cryptosystem
+What is the aim of the initial permutation (IP) table?
+    - defines the order (location) of the bits of the 64 bits long input
+
+A single S-BOX contains 64 items
+How many S-BOXES are present in the DES cryptosystem?
+    - 8
+
+What is the size of the DES's key space?
+    2^56
+Linear cryptoanalysis tries to find an f linear approximation such that ciphertext = f(plaintext,key)
+What is differential cryptoanalysis?
+    - tries to map bitwise ∆X differences in the input (plaintext) to ∆Y differences in the output (ciphertext)
+
+
+
+
+
+encyption:
+    split into 16 steps, each with a key
+
+decryption:
+    follow same 16 steps but with keys in reverse order

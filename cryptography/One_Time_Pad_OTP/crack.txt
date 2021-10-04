@@ -1,0 +1,12 @@
+# Shannon's secrecy
+
+since the message equals [X] length and the ciphertext and/or key is same length, it becomes nearly
+impossible to crack
+
+ex:
+original_text = "Woofer"
+encrypted_text = "GWFCSQ"
+
+Perfect Secrecy
+    message space size is the same as the ciphertext space size
+        you would have to look through EVERY english word that is 6 letters
