@@ -1,1 +1,1 @@
-# python notes
+Random Python projects
